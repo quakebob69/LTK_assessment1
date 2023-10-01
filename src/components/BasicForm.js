@@ -8,16 +8,13 @@ const BasicForm = () => (
     <h1>TODO</h1>
     <Formik
       initialValues={{
-        firstName: '',
-        lastName: '',
-        email: '',
+        todo: '',
       }}
-      onSubmit={(values) => {}}
+      onSubmit={(values) => {alert(JSON.stringify(values))}}
     >
       <Form>
-        <label htmlFor="todo">Add ToDo </label>
-        <Field id="todo" name="Add ToDo" placeholder="TextHere" />
-        <button type="submit">Submit</button>
+        <Field id="todo" name="todo" placeholder="TextHere" />
+        <button type="submit">Add Todo</button>
       </Form>
     </Formik>
   </div>
