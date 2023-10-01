@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useSelector, useDispatch } from 'react-redux'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -7,19 +8,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-function createData(todo) {
-  return { todo };
-}
-
-const rows = [
-  createData('Frozen yoghurt'),
-  createData('Ice cream sandwich'),
-  createData('Eclair'),
-  createData('Cupcake'),
-  createData('Gingerbread'),
-];
-
 export default function BasicTable() {
+  const rows = useSelector(state => state.tableData.rows);
+  const dispatch = useDispatch();
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
