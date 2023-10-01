@@ -1,5 +1,10 @@
+import BasicForm from './../components/BasicForm'
+
 export default function Todo() {
     return (
-        <div>Todo page</div>
+        <div className="todo">
+            <h2>Todo List</h2>
+                <BasicForm />
+        </div>
     )
 }
