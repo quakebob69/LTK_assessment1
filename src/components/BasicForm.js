@@ -17,7 +17,6 @@ const BasicForm = () => {
         todo: '',
       }}
       onSubmit={(values) => {
-        //alert(JSON.stringify(values))
        dispatch(addRow(values))
       }}
     >
