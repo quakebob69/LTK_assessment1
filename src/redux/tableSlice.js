@@ -14,9 +14,8 @@ export const tableSlice = createSlice({
     rows: rowz
   },
   reducers: {
-    addRow: state => {
-      //alert(state.rows);
-      alert(JSON.stringify(state.rows));
+    addRow: (state, action) => {
+      state.rows = [createData(action.payload.todo), ...state.rows];
     },
     deleteRow: (state, action) => {
       //state.rows += action.payload
