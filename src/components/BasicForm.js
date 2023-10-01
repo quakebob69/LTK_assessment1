@@ -1,16 +1,25 @@
 import React from 'react';
+import { useDispatch } from 'react-redux'
+import { addRow } from './../redux/tableSlice'
 import ReactDOM from 'react-dom';
 import { Formik, Field, Form } from 'formik';
 import { Button } from '@mui/material';
 
-const BasicForm = () => (
+const BasicForm = () => {
+  const dispatch = useDispatch();
+
+
+  return (
   <div>
     <h1>TODO</h1>
     <Formik
       initialValues={{
         todo: '',
       }}
-      onSubmit={(values) => {alert(JSON.stringify(values))}}
+      onSubmit={(values) => {
+        //alert(JSON.stringify(values))
+       dispatch(addRow(values))
+      }}
     >
       <Form>
         <Field id="todo" name="todo" placeholder="TextHere" />
@@ -18,6 +27,6 @@ const BasicForm = () => (
       </Form>
     </Formik>
   </div>
-);
+)};
 
 export default BasicForm

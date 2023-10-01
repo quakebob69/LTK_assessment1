@@ -15,10 +15,11 @@ export const tableSlice = createSlice({
   },
   reducers: {
     addRow: state => {
-      //state.value += 1
+      //alert(state.rows);
+      alert(JSON.stringify(state.rows));
     },
     deleteRow: (state, action) => {
-      //state.value += action.payload
+      //state.rows += action.payload
     },
   },
 })
