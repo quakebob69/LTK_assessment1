@@ -9,7 +9,7 @@ import Tooltip from '@mui/material/Tooltip';
 export default function AccountMenu() {
   return (
     <React.Fragment>
-      <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center', marginTop: '10px' }}>
         <Typography sx={{ minWidth: 100 }}>contact</Typography>
         <Typography sx={{ minWidth: 100 }}>profile</Typography>
         <Tooltip title="Todo List">
