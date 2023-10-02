@@ -6,6 +6,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import { Button } from "@mui/material";
 import Paper from '@mui/material/Paper';
 
 export default function BasicTable() {
@@ -18,16 +19,26 @@ export default function BasicTable() {
         <TableHead>
           <TableRow>
             <TableCell>TODO</TableCell>
+            <TableCell>ACTIONS</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {rows.map((row, postIndex) => (
             <TableRow
               key={row.todo}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
                 {row.todo}
+              </TableCell>
+              <TableCell component="th" scope="row">
+                <Button
+                  variant="outlined"
+                  color="error"
+                  onClick={() => alert(postIndex)}
+                >
+                  Delete
+                </Button>
               </TableCell>
             </TableRow>
           ))}
