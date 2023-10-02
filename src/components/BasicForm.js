@@ -9,8 +9,7 @@ const BasicForm = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <h1>TODO</h1>
+    <div style={{float: 'left', width: '100%'}}>
       <Formik
         initialValues={{
           todo: '',

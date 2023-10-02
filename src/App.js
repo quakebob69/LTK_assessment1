@@ -10,31 +10,22 @@ import Home from './pages/home';
 import Todo from './pages/todo';
 
 export default function App() {
-	const [openForm, setOpenForm] = React.useState(false);
-	const handleOnClick = (page) => {
-		console.log('open');
-		if (!openForm) {
-			setOpenForm(true)
-		} else {
-			setOpenForm(false)
-		}
-	};
 	return (
 		<Router>
-			<Container maxWidth="sm">
+			<Container>
 				<Box sx={{ flexGrow: 1 }}>
 					<Grid container spacing={2}>
 						<Grid item xs={8}>
 							<Box sx={{ my: 4 }}>
 								<NavLink to="/">
 									<Typography variant="h4" component="h1" gutterBottom>
-										React Skills test
+										React Skills Test
 									</Typography>
 								</NavLink>
 							</Box>
 						</Grid>
 						<Grid item xs={4}>
-							<AccountMenu onClick={handleOnClick} />
+							<AccountMenu />
 						</Grid>
 						<Grid item xs={2} />
 						<Grid item xs={8}>
