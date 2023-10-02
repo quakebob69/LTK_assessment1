@@ -9,7 +9,7 @@ const BasicForm = () => {
   const dispatch = useDispatch();
 
   return (
-    <div style={{float: 'left', width: '100%'}}>
+    <div style={{ float: 'left', width: '100%', marginBottom: '10px' }}>
       <Formik
         initialValues={{
           todo: '',
@@ -22,8 +22,13 @@ const BasicForm = () => {
         }}
       >
         <Form>
-          <Field id="todo" name="todo" placeholder="TextHere" />
-          <button type="submit">Add Todo</button>
+          <Field id="todo" name="todo" placeholder="Add Your Task" />
+          <Button
+            type="submit"
+            variant="outlined"
+          >
+            ADD
+          </Button>
         </Form>
       </Formik>
     </div>
