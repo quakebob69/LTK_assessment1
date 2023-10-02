@@ -16,23 +16,18 @@ export default function BasicTable() {
 
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>TODO</TableCell>
-            <TableCell>ACTIONS</TableCell>
-          </TableRow>
-        </TableHead>
+      <Table sx={{ minWidth: 400 }} aria-label="simple table">
+        <TableHead />
         <TableBody>
           {rows.map((row, postIndex) => (
             <TableRow
               key={row.todo}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
+              <TableCell component="th" scope="row" sx={{ fontSize: '24px', color: '#888888' }}>
                 {row.todo}
               </TableCell>
-              <TableCell component="th" scope="row">
+              <TableCell component="th" scope="row" align="right">
                 <Button
                   variant="outlined"
                   color="error"
