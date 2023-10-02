@@ -8,24 +8,27 @@ import { Button } from '@mui/material';
 const BasicForm = () => {
   const dispatch = useDispatch();
 
-
   return (
-  <div>
-    <h1>TODO</h1>
-    <Formik
-      initialValues={{
-        todo: '',
-      }}
-      onSubmit={(values) => {
-       dispatch(addRow(values))
-      }}
-    >
-      <Form>
-        <Field id="todo" name="todo" placeholder="TextHere" />
-        <button type="submit">Add Todo</button>
-      </Form>
-    </Formik>
-  </div>
-)};
+    <div>
+      <h1>TODO</h1>
+      <Formik
+        initialValues={{
+          todo: '',
+        }}
+        onSubmit={(values, { resetForm }) => {
+          dispatch(addRow(values));
+          resetForm({
+            todo: '',
+          })
+        }}
+      >
+        <Form>
+          <Field id="todo" name="todo" placeholder="TextHere" />
+          <button type="submit">Add Todo</button>
+        </Form>
+      </Formik>
+    </div>
+  )
+};
 
 export default BasicForm
