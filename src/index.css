@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+input[type=text] {
+  width: 85%;
+  padding: 6px;
+  margin: 8px 8px 8px 0px;
+  box-sizing: border-box;
+  color: #1976d2;
+  font-size: 17px;
+  border: 2px solid #1976d2;
+  border-radius: 4px;
+}
+
+::placeholder {
+  color: #1976d2;
+  opacity: 1;
+  /* Firefox */
+}
+
+::-ms-input-placeholder {
+  /* Edge 12 -18 */
+  color: #1976d2;
+}

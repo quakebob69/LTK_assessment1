@@ -22,7 +22,7 @@ const BasicForm = () => {
         }}
       >
         <Form>
-          <Field id="todo" name="todo" placeholder="Add Your Task" />
+          <Field id="todo" name="todo" type="text" placeholder="Add Your Task" />
           <Button
             type="submit"
             variant="outlined"
