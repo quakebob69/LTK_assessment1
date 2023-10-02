@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux'
 import { addRow } from './../redux/tableSlice'
-import ReactDOM from 'react-dom';
 import { Formik, Field, Form } from 'formik';
 import { Button } from '@mui/material';
 
