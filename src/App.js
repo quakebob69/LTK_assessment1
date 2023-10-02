@@ -20,18 +20,33 @@ export default function App() {
 		}
 	};
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={8}>
-				title
-			</Grid>
-			<Grid item xs={4}>
-				menu
-			</Grid>
-			<Grid item xs={2} />
-			<Grid item xs={8}>
-				todo stuff
-			</Grid>
-			<Grid item xs={2} />
-		</Grid>
+		<Router>
+			<Container maxWidth="sm">
+				<Box sx={{ flexGrow: 1 }}>
+					<Grid container spacing={2}>
+						<Grid item xs={8}>
+							<Box sx={{ my: 4 }}>
+								<NavLink to="/">
+									<Typography variant="h4" component="h1" gutterBottom>
+										React Skills test
+									</Typography>
+								</NavLink>
+							</Box>
+						</Grid>
+						<Grid item xs={4}>
+							<AccountMenu onClick={handleOnClick} />
+						</Grid>
+						<Grid item xs={2} />
+						<Grid item xs={8}>
+							<Routes>
+								<Route path="/" element={<Home />} />
+								<Route path="/todo" element={<Todo />} />
+							</Routes>
+						</Grid>
+						<Grid item xs={2} />
+					</Grid>
+				</Box>
+			</Container>
+		</Router>
 	);
 }
