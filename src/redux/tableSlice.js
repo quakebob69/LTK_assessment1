@@ -4,21 +4,17 @@ function createData(todo) {
   return { todo };
 }
 
-const rowz = [
-  createData('From REDUX'),
-];
-
 export const tableSlice = createSlice({
   name: 'tableData',
   initialState: {
-    rows: rowz
+    rows: []
   },
   reducers: {
     addRow: (state, action) => {
       state.rows = [createData(action.payload.todo), ...state.rows];
     },
     deleteRow: (state, action) => {
-      //state.rows += action.payload
+      state.rows = state.rows.filter((_, index) => index !== action.payload)
     },
   },
 })

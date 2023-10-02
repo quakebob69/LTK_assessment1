@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useSelector, useDispatch } from 'react-redux'
+import { deleteRow } from './../redux/tableSlice'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -35,7 +36,7 @@ export default function BasicTable() {
                 <Button
                   variant="outlined"
                   color="error"
-                  onClick={() => alert(postIndex)}
+                  onClick={() => dispatch(deleteRow(postIndex))}
                 >
                   Delete
                 </Button>
